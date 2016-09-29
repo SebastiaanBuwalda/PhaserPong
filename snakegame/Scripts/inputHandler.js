@@ -59,5 +59,17 @@ update: function()
   {
     return null;
   }
+},
+
+trueDirectionChecker: function()
+{
+  myDirection = movementScript.update();
+  if(myDirection!=trueDirection)
+  {
+    if (myDirection!=null)
+    {
+      trueDirection = myDirection;
+    }
+  }
 }
 }

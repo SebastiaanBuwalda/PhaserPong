@@ -1,9 +1,7 @@
 var game;
 var gridSize = 30;
-var longerSide = 870;
-var shorterSide = 510;
-
-
+var longerSide = 810;
+var shorterSide = 420;
 if (window.innerWidth>=window.innerHeight)
 {
 	//Check if the game is landscape or not

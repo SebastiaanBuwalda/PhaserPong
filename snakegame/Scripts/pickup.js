@@ -8,8 +8,8 @@ var Pickup =
     if(PickupObject!=null)
     {
       PickupObject.destroy();
-      score++;
     }
+    score++;
     Pickup.calulateNewPosition();
     PickupObject = myScene.add.sprite(newXPickup,newYPickup,'star');
     this.enableBody = true;
@@ -19,8 +19,7 @@ var Pickup =
   {
     newXPickup = Math.floor(Math.random() * (gameWidth/gridSize))*gridSize;
     newYPickup = Math.floor(Math.random() * (gameHeight/gridSize))*gridSize;
-    console.log(newXPickup,newYPickup);
-    if (playerHolder!=null)
+     if (playerHolder!=null)
     {
       for(var i = 0; i < playerHolder.length; i++)
       {

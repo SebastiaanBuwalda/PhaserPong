@@ -13,6 +13,33 @@ var swipeFunctions =
     startY = game.input.pointer1.position.y;
   },
 
+  endSwipeRecord: function()
+  {
+    endX = game.input.pointer1.position.x;
+    endY = game.input.pointer1.position.y;
+
+    deltaX = startX - endX;
+    deltaY = startY - endY;
+  },
+
+  swipeUpdater: function()
+  {
+    if(recordSwipe)
+    {
+      if (game.input.pointer1.isDown)
+      {
+        swipeFunctions.startSwipeRecord();
+        recordSwipe = false;
+      }
+    }
+    else if (!game.input.pointer1.isDown)
+      {
+        swipeFunctions.endSwipeRecord();
+        recordSwipe = true;
+        listenToSwipes = true;
+      }
+  },
+
   returnSwipeDirection:function()
   {
     if (deltaX<0)
@@ -53,15 +80,5 @@ var swipeFunctions =
           return "down";
       }
     }
-  },
-
-  endSwipeRecord: function()
-  {
-    endX = game.input.pointer1.position.x;
-    endY = game.input.pointer1.position.y;
-
-    deltaX = startX - endX;
-    deltaY = startY - endY;
-    //swipeFunctions.returnSwipeDirection();
   }
 }
