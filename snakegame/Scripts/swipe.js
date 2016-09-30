@@ -9,12 +9,14 @@ var swipeFunctions =
 
   startSwipeRecord: function()
   {
+    //Record start position of finger
     startX = game.input.pointer1.position.x;
     startY = game.input.pointer1.position.y;
   },
 
   endSwipeRecord: function()
   {
+    //Record end position of finger
     endX = game.input.pointer1.position.x;
     endY = game.input.pointer1.position.y;
 
@@ -24,6 +26,7 @@ var swipeFunctions =
 
   swipeUpdater: function()
   {
+    //Call this function in the update to make swiping work
     if(recordSwipe)
     {
       if (game.input.pointer1.isDown)
@@ -34,6 +37,7 @@ var swipeFunctions =
     }
     else if (!game.input.pointer1.isDown)
       {
+        //Happens every frame???
         swipeFunctions.endSwipeRecord();
         recordSwipe = true;
         listenToSwipes = true;
@@ -42,6 +46,7 @@ var swipeFunctions =
 
   returnSwipeDirection:function()
   {
+    //Call on this to return the swipe direction as a string
     if (deltaX<0)
     {
       var horizontalSwipeAmount = deltaX*-1;
@@ -58,6 +63,7 @@ var swipeFunctions =
     {
       var verticalSwipeAmount = deltaY;
     }
+    //See if the player covered more distance vertically or horizontally
     if(horizontalSwipeAmount>=verticalSwipeAmount)
     {
       if (deltaX<0)

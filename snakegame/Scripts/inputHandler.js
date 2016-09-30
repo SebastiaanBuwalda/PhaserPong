@@ -2,11 +2,13 @@ var movementScript =
 {
 preload: function()
 {
+  //Recieve the keyboard input
   KeyboardInput.recieveInput();
 },
 
 update: function()
 {
+  //Get all the correct forms of input
   if (cursors.left.isDown || listenToSwipes==true&&swipeFunctions.returnSwipeDirection()=="left")
   {
     if(trueDirection!="right")
@@ -63,6 +65,7 @@ update: function()
 
 trueDirectionChecker: function()
 {
+  //Make sure to update the direction of the snake correctly
   myDirection = movementScript.update();
   if(myDirection!=trueDirection)
   {

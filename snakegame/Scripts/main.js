@@ -13,6 +13,7 @@ else
 	var gameWidth = shorterSide;
 	var gameHeight = longerSide;
 }
+//Start the game and add the correct scenes to the game
 game  = new Phaser.Game(gameWidth, gameHeight, Phaser.AUTO, '');
 game.state.add('Game', Game)
 game.state.add('GameOver', GameOver)

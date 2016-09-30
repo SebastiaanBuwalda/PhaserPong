@@ -1,6 +1,7 @@
 var collisionEvents =
 {
 pickupCollision: function(oldLastCellx,oldLastCelly) {
+    //Check if any part of the snake
     for(var i = 0; i < playerHolder.length; i++)
     {
         if(playerHolder[i].x == PickupObject.x && playerHolder[i].y == PickupObject.y)

@@ -2,8 +2,10 @@ var cellFunctions =
 {
   screenWarp: function(cell)
   {
+      //Warps to the other side of the screen when exiting the screen
     if(cell.x>gameWidth)
     {
+
       cell.x = 0;
     }
     else if(cell.x<0)
@@ -22,6 +24,7 @@ var cellFunctions =
 
   addCell: function(oldLastCellx,oldLastCelly)
   {
+            //Adds a new cell
             playerHolder.unshift(game.add.sprite(oldLastCellx, oldLastCelly, 'diamond'));
-  },
+  }
 }

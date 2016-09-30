@@ -17,6 +17,7 @@ var Pickup =
 
   calulateNewPosition: function()
   {
+    //Get a random position on the "grid"
     newXPickup = Math.floor(Math.random() * (gameWidth/gridSize))*gridSize;
     newYPickup = Math.floor(Math.random() * (gameHeight/gridSize))*gridSize;
      if (playerHolder!=null)
@@ -25,6 +26,7 @@ var Pickup =
       {
         if(newXPickup==playerHolder[i].x&&newYPickup==playerHolder[i].y)
         {
+          //Make sure that the pickup never spawns on the player
           Pickup.calulateNewPosition();
         }
       }
